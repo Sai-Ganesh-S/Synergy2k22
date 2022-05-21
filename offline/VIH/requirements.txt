@@ -1,2 +1,4 @@
 flask
 python.env
+numpy
+pandasclear
