@@ -1,3 +1,4 @@
+from crypt import methods
 from email import contentmanager
 from flask import Flask, render_template, request
 
@@ -8,7 +9,7 @@ def start():
 
     return render_template('test.html')
 
-@app.route('/detect')
+@app.route('/detect', methods = ["POST", "GET"])
 def detect():
 
     # Predicting whether a given content is fake or real
@@ -16,7 +17,12 @@ def detect():
     content = request.values.get("content")
     link    = request.values.get("link")
 
-    return result
+    form_content = {
+        "content"   : content,
+        "link"      : link
+    }
+
+    return form_content
 
 @app.route('/ping')
 def ping():
