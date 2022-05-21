@@ -12,18 +12,27 @@ app = Flask(__name__)
 def home():
 
     if request.method == "POST":
+
         try:
+
             content = request.values.get("news_content")
             prediction = detect_content(content)
+
         except:
+
             pass
+
         try:
+
             link = request.values.get("news_link")
             prediction = detect_link(link)
             print("Prediction: ", prediction)        
 
         except:
+
             pass
+
+        
         return render_template("index.html", prediction = prediction)
 
     return render_template("index.html")
