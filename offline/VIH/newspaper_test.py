@@ -34,9 +34,9 @@ def detect_link(url):
 
 def test():
 
-    url = "https://www.indiatoday.in/coronavirus-outbreak/story/delhi-covid-cases-death-positivity-rate-1886156-2021-12-09"
+    url = "https://economictimes.indiatimes.com/news/india/karnataka-33-quota-for-women-in-outsourced-govt-jobs/articleshow/91706432.cms"
     pred = detect_link(url)
-    print (pred)
+    print ("prediction:", pred)
 
 def main():
 
