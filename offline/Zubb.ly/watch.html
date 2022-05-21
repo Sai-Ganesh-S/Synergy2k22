@@ -1,0 +1,248 @@
+<!-- #CodePenChallenge: Timekeeping -->
+<html>
+<title>Smartwatch Prototype</title>
+<head>
+<link rel="stylesheet" href="watchstyle.css">
+</head>
+<script src="watchjs.js"></script>
+
+<div class="background">
+
+	<div class="watch-container">
+
+		<div class="top-band"></div>
+
+		<div class="watch-case">
+
+			<div class="watch-face">
+
+				<!-- START OF TOP SECTION -->
+
+				<div class="top">
+
+					<div class="internet-button-container">
+
+						<button type="button" class="internet-button" href="google.com"><img src="https://adevelopersprofile.com/CodePen/Challenges/Watch/internet.png" alt="Internet Icon"></button>
+
+					</div>
+
+					<div class="clear-button-container hide">
+
+						<button type="button" class="btn-small" id="clear-alarm-event-button" onclick="clearAlarmEvent()">CLEAR</button>
+
+					</div>
+
+					<div class="sideBarNavMenu">
+
+						<span id="sideNavIcon" onclick="openSideNav()">&#9776;</span>
+
+					</div>
+
+					<div class="sideNavBar" id="sideNav">
+
+						<ul class="navListMenu">
+
+							<li><a href="javascript:void(0)" class="closeBtn" onclick="closeSideNav()">&times;</a></li>
+							<li>
+								<div class="menuItem">
+									<img class="icon" src="https://adevelopersprofile.com/CodePen/Challenges/Watch/settings.png" alt="CBT">
+									<a href="index1.html">Chatbot</a>
+								</div>
+							</li>
+							<li>
+								<div class="menuItem">
+									<img class="icon" src="https://adevelopersprofile.com/CodePen/Challenges/Watch/settings.png" alt="Emotion based content recommendation">
+									<a href="contentpage1.html">Emotion based content recommendation</span>
+								</div>
+							</li>
+							<li>
+								<div class="menuItem">
+									<img class="icon" src="https://adevelopersprofile.com/CodePen/Challenges/Watch/settings.png" alt="Settings Icon">
+									<a href="cbt.html">CBTherapy</a>
+								</div>
+							</li>
+
+						</ul>
+
+					</div>
+				</div>
+
+				<!-- END OF TOP SECTION -->
+
+				<!-- START OF CENTER SECTION -->
+
+				<div class="center">
+
+					<div class="home-screen">
+
+						<div class="time-display"></div>
+<form id="form" onsubmit="return false;">
+
+  <label for="HR">HR:</label>
+  <input type="text" id="HR" name="HR" value="HR Value"><br>
+
+  <label for="PPG">PPG:</label>
+    <input type="text" id="PPG" name="PPG" value="PPG Value"><br>
+
+  <label for="EDA">EDA:</label>
+  <input type="text" id="EDA" name="EDA" value="EDA Value"><br>
+
+  <input type="submit" onclick="othername();">
+</form> 
+
+					</div>
+
+					<div class="timer-screen hide">
+
+						<div class="timer-display hide"></div>
+
+					</div>
+
+					<div class="function-screen hide">
+
+						<div class="function-title-container">
+
+							<div class="function-title"></div>
+
+							<div class="doom-select doom-container hide">
+
+								<p class="doom-select hide" id="doom-button-label">DOOMSDAY:</p>
+
+								<label class="doom-select doom-toggle hide">
+
+									<input type="checkbox" name="doom-checkbox" id="doom-checkbox" class="doom-select" onchange="setDoomsday()">
+									<span class="doom-select slider round hide"></span>
+
+								</label>
+
+							</div>
+
+						</div>
+
+						<div class="date-function" id="date-input">
+
+							<div class="date-function date-field hide">
+
+								<div class="date-function date-field-display hide">
+
+									<p class="date-function" id="month-field"></p>
+
+								</div>
+
+								<div class="date-function incr-decr-btn-container hide">
+
+									<button type="button" class="date-function func-btn hide" id="decr-month" onclick="decreaseMonth()">-</button>
+									<button type="button" class="date-function func-btn hide" id="incr-month" onclick="increaseMonth()">+</button>
+
+								</div>
+
+							</div>
+
+							<div class="date-function date-field hide">
+
+								<div class="date-function date-field-display hide">
+
+									<p class="date-function hide" id="day-field"></p>
+
+								</div>
+
+								<div class="date-function incr-decr-btn-container hide">
+
+									<button type="button" class="date-function func-btn hide" id="decr-day" onclick="decreaseDay()">-</button>
+									<button type="button" class="date-function func-btn hide" id="incr-day" onclick="increaseDay()">+</button>
+
+								</div>
+
+							</div>
+
+							<div class="date-function date-field hide">
+
+								<div class="date-function date-field-display hide">
+
+									<p class="date-function hide" id="year-field"></p>
+
+								</div>
+
+								<div class="date-function incr-decr-btn-container hide">
+
+									<button type="button" class="date-function func-btn hide" id="decr-year" onclick="decreaseYear()">-</button>
+									<button type="button" class="date-function func-btn hide" id="incr-year" onclick="increaseYear()">+</button>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="time-function hide" id="time-input">
+
+							<div class="time-function time-field hide">
+
+								<div class="time-function time-field-display hide">
+									<p class="time-function hide" id="hour-field"></p>
+								</div>
+
+								<div class="time-function incr-decr-btn-container hide">
+
+									<button type="button" class="time-function func-btn hide" id="decr-hour" onclick="decreaseHour()">-</button>
+									<button type="button" class="time-function func-btn hide" id="incr-hour" onclick="increaseHour()">+</button>
+
+								</div>
+
+							</div>
+
+							<div class="time-function time-field hide">
+
+								<div class="time-function time-field-display hide">
+									<p class="time-function hide" id="minute-field"></p>
+								</div>
+
+								<div class="time-function incr-decr-btn-container hide">
+
+									<button type="button" class="time-function func-btn hide" id="decr-minute" onclick="decreaseMinute()">-</button>
+									<button type="button" class="time-function func-btn hide" id="incr-minute" onclick="increaseMinute()">+</button>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="internet-screen hide" id="internet-display">
+
+							<iframe src="https://css-tricks.com/" title="Internet" id="internet-iframe" class="internet-screen hide"></iframe>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<!-- END OF CENTER SECTION -->
+
+				<!-- START OF BOTTOM SECTION -->
+
+				<div class="bottom">
+
+					<button type="button" class="btn left" id="left-button" onclick="getWeather()"></button>
+					<button type="button" class="btn middle" id="middle-button" onclick="getEmail()"></button>
+					<button type="button" class="btn right" id="right-button" onclick="loadTimer()"></button>
+
+					<button type="button" class="btn hide" id="function1" onclick="function1Click()"></button>
+					<button type="button" class="btn hide" id="function2" onclick="function2Click()"></button>
+					<button type="button" class="btn hide" id="function3" onclick="function3Click()"></button>
+
+				</div>
+
+				<!-- END OF BOTTOM SECTION -->
+
+			</div>
+
+		</div>
+
+		<div class="bottom-band"></div>
+
+	</div>
+
+</div>
+</html>
