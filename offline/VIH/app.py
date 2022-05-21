@@ -1,30 +1,32 @@
-from crypt import methods
-from email import contentmanager
-from flask import Flask, render_template, request
+from flask import Flask,request, flash, redirect, render_template, request
+import pickle
+from score import predict_link_score as detect_link
+from score import predict_content_score as detect_content
+
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
-@app.route('/')
-def start():
 
-    return render_template('test.html')
+@app.route('/', methods = ["GET","POST"])
+def home():
 
-@app.route('/detect', methods = ["POST", "GET"])
-def detect():
+    if request.method == "POST":
+        try:
+            content = request.values.get("news_content")
+            prediction = detect_content(content)
+        except:
+            pass
+        try:
+            link = request.values.get("news_link")
+            prediction = detect_link(link)
+            print("Prediction: ", prediction)        
 
-    # Predicting whether a given content is fake or real
+        except:
+            pass
+        return render_template("index.html", prediction = prediction)
 
-    content = request.values.get("content")
-    link    = request.values.get("link")
-
-    prediction = "fake"
-
-    form_content = {
-        "content"   : content,
-        "link"      : link
-    }
-
-    return render_template('test.html', prediction = prediction)
+    return render_template("index.html")
 
 @app.route('/ping')
 def ping():
