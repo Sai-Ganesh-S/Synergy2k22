@@ -32,7 +32,6 @@ def home():
 
             pass
 
-        
         return render_template("index.html", prediction = prediction)
 
     return render_template("index.html")
