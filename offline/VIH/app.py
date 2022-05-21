@@ -17,12 +17,14 @@ def detect():
     content = request.values.get("content")
     link    = request.values.get("link")
 
+    prediction = "fake"
+
     form_content = {
         "content"   : content,
         "link"      : link
     }
 
-    return form_content
+    return render_template('test.html', prediction = prediction)
 
 @app.route('/ping')
 def ping():
