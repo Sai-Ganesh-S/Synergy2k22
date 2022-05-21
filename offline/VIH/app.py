@@ -13,7 +13,7 @@ def detect():
 
     # Predicting whether a given content is fake or real
 
-    content    = request.values.get("content")
+    content = request.values.get("content")
     link    = request.values.get("link")
 
     return result
