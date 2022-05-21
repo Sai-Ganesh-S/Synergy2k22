@@ -1,3 +1,13 @@
+import numpy as np 
+import pandas as pd
+from sklearn import svm 
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import train_test_split
+
+# import train
+import pickle
+
 # NLP libraries to clean the text data
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
@@ -57,4 +67,14 @@ def fake_news_det(news):
         return 1
     else:
         return 0
+    
+def main():
+    
+    text = '''
+        WASHINGTON (Reuters) - Steve Bannon, a former top White House strategist and a former chief campaign aide to Donald Trump, has been asked to testify before the U.S. House of Representatives intelligence panel next month, Bloomberg News reported. Corey Lewandowski, Trump’s former campaign manager, was also asked to testify in early January, Bloomberg reported on Friday, citing an official familiar with the committee’s schedule.  Representatives for the committee did not immediately respond to inquiries for comment. The panel is probing alleged Russian meddling into the 2016 U.S. election. 
+    '''
 
+    fake_news_det(text)
+
+
+main()
