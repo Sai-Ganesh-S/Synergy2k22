@@ -145,6 +145,7 @@ def finalizer(pred_list):
 
     return result
 
+#function to predict the score of links
 def predict_link_score(url):
     
     # url = "https://www.dnaindia.com/education/report-cbse-class-10-12-board-exam-2022-term-1-cancellation-latest-updates-news-exam-centre-datesheetonline-petition-2917207"
@@ -157,8 +158,8 @@ def predict_link_score(url):
     print ("Link score:", result)
     return result
     
-#function to predict the score of content
 
+#function to predict the score of content
 def predict_content_score(content):
 
     keyword_list = get_keyword_list(content)
