@@ -1,0 +1,17 @@
+flask
+python.env
+numpy
+pandasclear
+pandas
+sklearn
+nltk
+newspaper3k
+feedparser
+python-dotenv
+bs4
+lxml
+selenium
+flask_mail
+spacy
+yake
+pytesseract
