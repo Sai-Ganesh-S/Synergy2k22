@@ -8,12 +8,20 @@
     <title>Document</title>
 </head>
 
-<body>
+<body>Fake Online Content Detection
+    <br>
+    <br>
 
-    Hello! Fake Online Content Detection
+    <form action="/detect" method="post">
 
-    <form action="/detect">
+        <label for="content">Content:</label><br>
+        <!-- <input type="text" id="content" name="content"><br>     -->
+        <textarea id="content" name="content" rows="4" cols="50"></textarea><br>
 
+        <label for="link">Link:</label><br>
+        <input type="url" id="link" name="link"><br><br>
+        <input type="submit" value="Submit">
+        <br>
 
     </form>
 
