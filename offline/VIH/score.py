@@ -157,6 +157,7 @@ def predict_link_score(url):
     print ("Link score:", result)
     return result
     
+#function to predict the score of content
 
 def predict_content_score(content):
 
@@ -196,3 +197,5 @@ def predict_content_score(content):
 
 if __name__=='__main__':
     predict_link_score("https://www.bbc.com/sport/football/59572726")
+
+
