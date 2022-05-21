@@ -1,3 +1,5 @@
+import pandas as pd
+
 import itertools
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -34,3 +36,37 @@ X, Y = df.text.fillna(' '), df.Label
 
 # Splitting the dataset here
 x_train,x_test,y_train,y_test=train_test_split(X, Y, test_size=0.2, random_state=7)
+
+
+# data = {
+#         # "title" : [title],
+#         "text"  : text
+# }
+
+vectorization = TfidfVectorizer()
+
+
+# tfidf_test=tfidf_vectorizer.transform(data)
+xv_train = vectorization.fit_transform(x_train)
+xv_test = vectorization.transform(x_test)
+
+
+# print (xv_test)
+
+svm_model = SVC(kernel = 'linear')
+svm_model.fit(xv_train,y_train)
+
+svm_y_pred = svm_model.predict(xv_test)
+
+score = accuracy_score(y_test,svm_y_pred)
+
+print (score)
+
+with open('vectorizer.pkl', 'wb') as f:
+    pickle.dump(vectorization, f)
+
+
+with open('model_svm.pkl', 'wb') as f:
+    pickle.dump(svm_model, f)
+
+print("Training finished")
