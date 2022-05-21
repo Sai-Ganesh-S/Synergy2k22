@@ -24,3 +24,10 @@ def person_detect(frame):
         cv2.rectangle(frame, (x,y), (x+w,y+h), (0,0,255), 2)
         cv2.putText(frame, f'person {person}', (x,y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,255), 1)
         person += 1
+
+    if(person>1):
+        last_move = perf_counter()
+        return True
+    else:
+        return False
+
