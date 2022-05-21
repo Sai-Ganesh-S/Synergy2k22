@@ -4,7 +4,14 @@ from email.mime.text import MIMEText
 from dotenv import load_dotenv
 from email.mime.application import MIMEApplication
 import os
-from os.path import basename
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from dotenv import load_dotenv
+from email.mime.application import MIMEApplication
+import os
+from flask_mail import Mail, Message
+from emailer import send_email
 
 load_dotenv()
 
