@@ -9,7 +9,9 @@
 	display: flex;
 	flex-direction: column;
 }
-
+body{
+	margin: 0;
+}
 .background,
 .watch-case {
 	justify-content: center;
@@ -17,9 +19,9 @@
 }
 
 .background {
-	width: 100vw;
-	height: 100vh;
-	
+	width: 100%;
+	height: 100%;
+
   background-color: #000000;
 	
 
