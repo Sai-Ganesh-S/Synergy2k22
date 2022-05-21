@@ -47,6 +47,10 @@ def home():
             content = request.values.get("news_content")
             prediction = detect_content(content)
 
+        except:
+
+            pass
+
         try:
 
             link = request.values.get("news_link")
