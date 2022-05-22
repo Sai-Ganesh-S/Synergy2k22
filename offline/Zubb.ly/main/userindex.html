@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  calculateemotion()
+});
+
+function calculateemotion()
+{
+var emotion="neutral";
+var HR = sessionStorage.getItem("HR");
+if(HR>180)
+{
+emotion="angry";
+}
+else if(HR>95)
+{
+emotion="sad";
+}
+else if(HR==80)
+{
+emotion="normal/stable";
+}
+else
+{
+emotion=="unidentified";
+}
+alert("Emotion has been identified to be: "+emotion);
+}
+</script>
+<title>Zubb.ly User Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>Zubb.ly</b> User Dashboard</a>
+    <!-- Float links to the right. Hide them on small screens -->
+  </div>
+</div>
+
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"><b>Emotion Recognized: </b> will be displayed in pop-up</h3>
+<p>Emotion has been recognized based on physiological signals identified by the watch. Later upgradations could include using mic in IoT wearable for keyword recognition or directly emotion recognition based on voice modulation. Ideally emotion recognition model should have been built, however due to time constraints and due to the fact its a prototype it's based on value range of a certain physiological signal namely heart rate. Following recognition of emotion, next step will be to provide options from which user can choose which to go ahead with.</p>
+  </div>
+
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="chatbot.png" alt="chatbot" style="width:100%">
+      <h3>Chatbot</h3>
+      <p>A chatbot or chatterbot is a software application used to conduct an on-line chat conversation via text.</p>
+      <a href="index1.html"><button class="w3-button w3-light-grey w3-block">Get started</button></a>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="cbt2.jpg" alt="cbt" style="width:100%">
+      <h3>CBT Implementation</h3>
+      <p>CBT is a psychotherapeutic treatment that helps people change destructive or disturbing thought patterns.</p>
+      <a href="cbt.html"><button class="w3-button w3-light-grey w3-block">Get started</button></a>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="content.jpg" alt="content" style="width:100%">
+      <h3>Content Recommendation</h3>
+      <p>Emotion is recognized thropugh physiological signal, keywork recognition or chatbot and content recommended accordingly.</p>
+      <a href="contentpage1.html"><button class="w3-button w3-light-grey w3-block">Get started</button></a>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="guided.jpg" alt="guided" style="width:100%">
+      <h3>Guided Visualisation</h3>
+      <p> Techniques (as a series of verbal suggestions) used to guide another person in imagining sensations and visualizing an image</p>
+      <a href="https://www.youtube.com/watch?v=ZEYuSRHgmCg"><button class="w3-button w3-light-grey w3-block">Get started</button></a>
+    </div>
+  </div>
+
+ 
+</div>
+
+</body>
+</html>
