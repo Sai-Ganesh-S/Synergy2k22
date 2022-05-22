@@ -26,5 +26,15 @@
     - sklearn
     - nltk
     - <the list is endless:) >
-    
 
+- Image Detection
+
+    - Pytesseract
+    - OCR
+    
+    
+- File Structure:
+
+    - Templates: HTML files
+    - Static: Images
+    - Models: Contains models we've tried
