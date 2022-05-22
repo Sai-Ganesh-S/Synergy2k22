@@ -321,7 +321,7 @@ function othername() {
 
 function redirect()
 {
-  location.replace(indexnew.html)
+  location.replace("login.html")
 }
 
 function timer() {
